@@ -1,7 +1,9 @@
 from pathlib import Path
-from typing import Collection, Iterable
+from typing import Collection, Iterable, TypeVar
 
 from PIL import Image
+
+T = TypeVar('T')
 
 
 def get_source_path() -> Path:
@@ -52,8 +54,8 @@ def get_final_name() -> str:
         return name
 
 
-def split_img_between_items(img: Image.Image, items: Collection) \
-        -> dict[str, Image.Image]:
+def split_img_between_items(img: Image.Image, items: Collection[T]) \
+        -> dict[T, Image.Image]:
     letters_img_parts_map = {}
     width, height = img.size
     part = height // len(items)
