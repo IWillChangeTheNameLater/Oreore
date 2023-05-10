@@ -52,15 +52,14 @@ def get_final_name() -> str:
         return name
 
 
-def split_img_between_letters(img: Image.Image, letters: Collection) \
+def split_img_between_items(img: Image.Image, items: Collection) \
         -> dict[str, Image.Image]:
     letters_img_parts_map = {}
     width, height = img.size
-    part = height // len(letters)
+    part = height // len(items)
 
     upper = 0
-    for l in letters:
-        l = str(l)
+    for l in items:
         lower = upper + part
         if l not in letters_img_parts_map:
             letters_img_parts_map[l] = img.crop((0, upper, width, lower))
@@ -90,7 +89,7 @@ def main():
 
     img = Image.open(source_path)
 
-    letters_img_parts = split_img_between_letters(img, initial_name)
+    letters_img_parts = split_img_between_items(img, initial_name)
     img_parts = [letters_img_parts[l] for l in final_name]
     img = compose_img_from_parts(img_parts)
 
