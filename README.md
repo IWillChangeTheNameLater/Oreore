@@ -44,11 +44,14 @@ The source image:
 ![oreo.jpeg](oreo.jpeg)
 
 The output 'oreore' image:
+
 ![oreore.jpeg](oreore.jpeg)
 
 The output 'oooooooooo' image:
+
 ![oooooooooo.jpeg](oooooooooo.jpeg)
 
 The output 'error' image:
+
 ![error.jpeg](error.jpeg)
 
