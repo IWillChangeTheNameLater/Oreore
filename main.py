@@ -63,7 +63,7 @@ def split_img_between_items(img: Image.Image, items: Collection[T]) \
     :param img: The image to be split.
     :param items: The items the image to be split between.
 
-    :result: A dictionary with the items as a key and the parts of the
+    :result: A dictionary with the items as keys and the parts of the
     split image as appropriate values to the items.
 
     .. note:: The presence of a key in the dictionary is
@@ -74,10 +74,10 @@ def split_img_between_items(img: Image.Image, items: Collection[T]) \
 
     # Not the highest value but the previous highest point on the image
     upper = 0
-    for l in items:
+    for i in items:
         lower = upper + part
-        if l not in letters_img_parts_map:
-            letters_img_parts_map[l] = img.crop((0, upper, width, lower))
+        if i not in letters_img_parts_map:
+            letters_img_parts_map[i] = img.crop((0, upper, width, lower))
 
         upper = lower
 
@@ -93,15 +93,15 @@ def compose_img_from_parts(parts: Iterable[Image.Image]) -> Image.Image:
     :param parts: The parts of the new image from which it will be composed.
 
     :result: The image composed of the specified parts."""
-    width = max(p.size[0] for p in parts)
-    height = sum(p.size[1] for p in parts)
+    width = max(part.size[0] for part in parts)
+    height = sum(part.size[1] for part in parts)
     # Create the bigger image to fit the rest
     img = Image.new('RGB', (width, height), 'white')
 
     upper = 0
-    for p in parts:
-        img.paste(p, (0, upper))
-        upper += p.size[1]
+    for part in parts:
+        img.paste(part, (0, upper))
+        upper += part.size[1]
 
     return img
 
@@ -114,7 +114,7 @@ def main():
     img = Image.open(source_path)
 
     letters_img_parts = split_img_between_items(img, initial_name)
-    img_parts = [letters_img_parts[l] for l in final_name]
+    img_parts = [letters_img_parts[letter] for letter in final_name]
     img = compose_img_from_parts(img_parts)
 
     img.save(source_path.with_stem(final_name))
