@@ -27,6 +27,10 @@ To use this application, follow these steps:
 5. After the conversion is complete, the output image file will be saved in the same directory
    as the source image file.
 
+### Or
+
+Just run the `Oreore.exe` executable file.
+
 ## Example
 
 By running the program in the current directory and specifying
