@@ -56,6 +56,18 @@ def get_final_name() -> str:
 
 def split_img_between_items(img: Image.Image, items: Collection[T]) \
         -> dict[T, Image.Image]:
+    """Create a dict with parts of the image with appropriate values.
+
+    Split the image between the first occurrences of each item.
+
+    :param img: The image to be split.
+    :param items: The items the image to be split between.
+
+    :result: A dictionary with the items as a key and the parts of the
+    split image as appropriate values to the items.
+
+    .. note:: The presence of a key in the dictionary is
+    determined by its hash."""
     letters_img_parts_map = {}
     width, height = img.size
     part = height // len(items)
@@ -73,6 +85,14 @@ def split_img_between_items(img: Image.Image, items: Collection[T]) \
 
 
 def compose_img_from_parts(parts: Iterable[Image.Image]) -> Image.Image:
+    """Compose a new image from the different images.
+
+    Generate a new image composed of the specified parts arranged vertically
+    one after the other in the original order from top to bottom.
+
+    :param parts: The parts of the new image from which it will be composed.
+
+    :result: The image composed of the specified parts."""
     width = max(p.size[0] for p in parts)
     height = sum(p.size[1] for p in parts)
     # Create the bigger image to fit the rest
