@@ -34,12 +34,12 @@ Just run the `Oreore.exe` executable file.
 ## Example
 
 By running the program in the current directory and specifying
-the path to the file as 'oreo.jpeg ',
+the path to the file as `oreo.jpeg`,
 the original name as 'oreo',
 and the final name as 'oreore', 'ooooooooooo' or 'error'
 we get the following images respectively:
 
-The source image:
+The input 'oreo' image:
 
 ![oreo.jpeg](oreo.jpeg)
 
