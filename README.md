@@ -9,10 +9,12 @@ words like and the image is changed according to the new order.
 ## Installation
 
 1. Clone this repository to your computer using
-   `https://github.com/IWillChangeTheNameLater/Oreore.git`
+
+   `git clone https://github.com/IWillChangeTheNameLater/Oreore.git`
 2. Install the required packages by running the following command
    (just Pillow version 9.5.0):
-   `pip install -r requirements.txt`
+   
+   `python -m pip install -r requirements.txt`
 
 ## Usage
 
