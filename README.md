@@ -8,9 +8,10 @@ words like and the image is changed according to the new order.
 
 ## Installation
 
-1. Clone this repository to your computer using
+1. Clone this repository to your computer using:
 
    `git clone https://github.com/IWillChangeTheNameLater/Oreore.git`
+   
 2. Install the required packages by running the following command
    (just Pillow version 9.5.0):
    
@@ -24,9 +25,11 @@ To use this application, follow these steps:
 2. Navigate to the directory where you cloned the repository using: 
    
    `cd Oreore`
+   
 4. Run the script with the following command to start the application: 
    
    `python main.py`
+   
 6. Follow the instructions in the command prompt/terminal to enter the path to the image file,
    the initial name of the image (you can type anything), and the final name of the image
    according to which you want to change it.
